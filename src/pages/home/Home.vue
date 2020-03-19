@@ -1,13 +1,17 @@
 <template>
-<!-- 对外只能暴露一个根标签 -->
   <div>
-    hello world
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
+// 引入的是局部组件
+import HomeHeader from './components/Header'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeHeader
+  }
 }
 </script>
 
