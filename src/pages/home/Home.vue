@@ -1,6 +1,8 @@
 <template>
   <div>
-    <home-header :city="city"></home-header>
+    <!-- <home-header :city="city"></home-header> -->
+    <!-- 使用vuex，cities不需要后端数据传入，是前端存储的数据 -->
+    <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -27,7 +29,7 @@ export default {
   },
   data () {
     return {
-      city: '',
+      // city: '',
       swiperList: [],
       iconList: [],
       weekendList: [],
@@ -45,7 +47,7 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         // const data = res.data
-        this.city = res.city
+        // this.city = res.city
         this.swiperList = res.data.swiperList
         this.iconList = res.data.iconList
         this.recommendList = res.data.recommendList
