@@ -50,10 +50,6 @@ export default {
         id: '008',
         imgUrl: 'https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
         desc: '华谊兄弟'
-      }, {
-        id: '009',
-        imgUrl: 'https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-        desc: '亲子游'
       }]
     }
   },
@@ -76,7 +72,8 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   @import '~styles/mixins.styl'
-  .icons
+  .icons >>> .swiper-slide
+    margin-top: .2rem
     overflow: hidden
     height: 0
     padding-bottom: 50%
