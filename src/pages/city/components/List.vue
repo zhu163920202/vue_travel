@@ -43,8 +43,7 @@ export default {
     // ...mapState(['city']) 参数可以为对象形式
     ...mapState({ // 公用数据中的‘city’在当前组件中的名字为city
       currentCity: 'city'
-    }),
-    
+    })
   },
   methods: {
     handleCityClick (city) {
