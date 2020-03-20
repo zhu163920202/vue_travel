@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -16,47 +16,41 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      iconList: [{
-        id: '001',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '002',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
-        desc: '踏青赏花'
-      }, {
-        id: '003',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-        desc: '亲子游'
-      }, {
-        id: '004',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/4c/eac47dd8def8de02.png',
-        desc: '鲜花小镇'
-      }, {
-        id: '005',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png',
-        desc: '动植物园'
-      }, {
-        id: '006',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-        desc: '探险王国'
-      }, {
-        id: '007',
-        imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/e6ef266d5a6fd6c37f2d8b6e096b2ca8.png',
-        desc: '南通绿博园'
-      }, {
-        id: '008',
-        imgUrl: 'https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-        desc: '华谊兄弟'
-      }]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
+  // data () {
+  //   return {
+  //     iconList: [{
+  //       id: '001',
+  //       imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
+  //       desc: '景点门票'
+  //     }, {
+  //       id: '002',
+  //       imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
+  //       desc: '踏青赏花'
+  //     }, {
+  //       id: '003',
+  //       imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
+  //       desc: '亲子游'
+  //     }, {
+  //       id: '004',
+  //       imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/4c/eac47dd8def8de02.png',
+  //       desc: '鲜花小镇'
+  //     }]
+  //   }
+  // },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

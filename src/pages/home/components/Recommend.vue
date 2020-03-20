@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item borderr-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item borderr-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title"> {{ item.title }}</p>
@@ -17,31 +17,34 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1910/37/37c5a67e18f55f78a3.water.jpg_200x200_0702c004.jpg',
-        title: '南通森林动物园',
-        desc: '与动物嬉戏，共享和谐人生'
-      }, {
-        id: '002',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/201403/07/fd9faca3bc5df4e2efccf51a5cfdda95.jpg_200x200_730f0f5b.jpg',
-        title: '水绘园',
-        desc: '与动物嬉戏，共享和谐人生'
-      }, {
-        id: '003',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1803/78/78af48c1edf992f9a3.img.png_200x200_c811bed8.png',
-        title: '鲜花小镇',
-        desc: '与动物嬉戏，共享和谐人生'
-      }, {
-        id: '004',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1910/37/37c5a67e18f55f78a3.water.jpg_200x200_0702c004.jpg',
-        title: '南通森林动物园',
-        desc: '与动物嬉戏，共享和谐人生'
-      }]
-    }
+  props: {
+    list: Array
   }
+  // data () {
+  //   return {
+  //     recommendList: [{
+  //       id: '001',
+  //       imgUrl: 'https://imgs.qunarzz.com/sight/p0/1910/37/37c5a67e18f55f78a3.water.jpg_200x200_0702c004.jpg',
+  //       title: '南通森林动物园',
+  //       desc: '与动物嬉戏，共享和谐人生'
+  //     }, {
+  //       id: '002',
+  //       imgUrl: 'https://imgs.qunarzz.com/sight/p0/201403/07/fd9faca3bc5df4e2efccf51a5cfdda95.jpg_200x200_730f0f5b.jpg',
+  //       title: '水绘园',
+  //       desc: '与动物嬉戏，共享和谐人生'
+  //     }, {
+  //       id: '003',
+  //       imgUrl: 'https://imgs.qunarzz.com/sight/p0/1803/78/78af48c1edf992f9a3.img.png_200x200_c811bed8.png',
+  //       title: '鲜花小镇',
+  //       desc: '与动物嬉戏，共享和谐人生'
+  //     }, {
+  //       id: '004',
+  //       imgUrl: 'https://imgs.qunarzz.com/sight/p0/1910/37/37c5a67e18f55f78a3.water.jpg_200x200_0702c004.jpg',
+  //       title: '南通森林动物园',
+  //       desc: '与动物嬉戏，共享和谐人生'
+  //     }]
+  //   }
+  // }
 }
 </script>
 
