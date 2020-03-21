@@ -39,6 +39,11 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 页面即将被隐藏时deactivated生命周期钩子被执行
+  deactivated () {
+    // 页面被隐藏时解绑全局事件，避免对其他页面产生影响
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
