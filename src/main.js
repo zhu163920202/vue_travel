@@ -6,6 +6,8 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 import store from './store'
+// 解决手机不能解析es6
+import 'babel-polyfill'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
